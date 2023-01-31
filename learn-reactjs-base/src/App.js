@@ -1,3 +1,4 @@
+import TodoFeature from 'features/Todo';
 import React from 'react';
 import './App.css';
 import logo from './logo.svg';
@@ -12,7 +13,7 @@ function App() {
   const colorList = ['red', 'blue', 'green'];
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <header className="App-header"> }
         <img src={logo} className="App-logo" alt="logo" />
         <p> Y Nhi </p>
         <p>Xin chao {name} - {age} - {isFemale? 'Female':'Male'}</p>
@@ -41,13 +42,14 @@ function App() {
           </>
         )}
         {/* render object */}
-        <p>{student.name}</p>
+       {/* <p>{student.name}</p>
         <ul>
           {colorList.map(color=>(
             <li style={{color}}> {color}</li>
           ))}
         </ul>
-      </header>
+       </header> */}
+      <TodoFeature/>
     </div>
   );
 }
