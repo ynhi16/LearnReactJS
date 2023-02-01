@@ -1,3 +1,4 @@
+import AlbumFeature from 'features/Album';
 import TodoFeature from 'features/Todo';
 import React from 'react';
 import './App.css';
@@ -49,7 +50,8 @@ function App() {
           ))}
         </ul>
        </header> */}
-      <TodoFeature/>
+      {/* <TodoFeature/> */}
+      <AlbumFeature/>
     </div>
   );
 }
