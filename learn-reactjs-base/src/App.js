@@ -1,3 +1,4 @@
+import ColorBox from 'components/ColorBox';
 import AlbumFeature from 'features/Album';
 import TodoFeature from 'features/Todo';
 import React from 'react';
@@ -43,7 +44,7 @@ function App() {
           </>
         )}
         {/* render object */}
-       {/* <p>{student.name}</p>
+      {/* <p>{student.name}</p>
         <ul>
           {colorList.map(color=>(
             <li style={{color}}> {color}</li>
@@ -51,7 +52,9 @@ function App() {
         </ul>
        </header> */}
       {/* <TodoFeature/> */}
-      <AlbumFeature/>
+      {/* <AlbumFeature/> */}
+      <div>React Hook</div>
+      <ColorBox />
     </div>
   );
 }
