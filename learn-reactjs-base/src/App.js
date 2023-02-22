@@ -2,6 +2,7 @@ import ColorBox from 'components/ColorBox';
 import AlbumFeature from 'features/Album';
 import TodoFeature from 'features/Todo';
 import React from 'react';
+import { Route, Link, NavLink, Switch, Redirect } from 'react-router-dom';
 import './App.css';
 import logo from './logo.svg';
 
@@ -53,8 +54,29 @@ function App() {
        </header> */}
       {/* <TodoFeature/> */}
       {/* <AlbumFeature/> */}
-      <div>React Hook</div>
-      <ColorBox />
+      Header
+      {/* <p>
+        <Link to="/todos">Todo</Link>
+      </p>
+      <p>
+        <Link to="/albums">Album</Link>
+      </p> */}
+      <p>
+        <NavLink to="/todos" activeClassName="active-menu">
+          Todo
+        </NavLink>
+      </p>
+      <p>
+        <NavLink to="/albums">Album</NavLink>
+      </p>
+      <Switch>
+        <Redirect from="/home" to="/" exact></Redirect>
+        <Redirect from="/post-list/:postId" to="/posts/:postId" exact></Redirect>
+        <Route path="/" component={TodoFeature} exact />
+        <Route path="/todos" component={TodoFeature} />
+        <Route path="/albums" component={AlbumFeature} />
+      </Switch>
+      Footer
     </div>
   );
 }

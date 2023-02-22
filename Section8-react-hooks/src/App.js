@@ -1,6 +1,4 @@
 // import ColorBox from 'components/ColorBox';
-
-
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import queryString from 'query-string';
@@ -9,6 +7,7 @@ import PostList from './components/PostList';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 import Pagination from './components/Pagination';
+import Clock from './components/Clock';
 
 function App() {
   const [todoList, setTodoList]= useState([
@@ -76,17 +75,23 @@ function App() {
       _page: newPage
     })
   }
+
+  const [showClock, setShowClock] = useState(true);
   return (
     <div className="App">
       <div>React Hook</div>
       {/* <ColorBox /> */}
       {/* <TodoForm onSubmit={handleTodoFormSubmit}/>
       <TodoList todos={todoList} onTodoClick={handleTodoClick}/> */}
-      <PostList posts={postList}/>
+      {/* <PostList posts={postList}/>
       <Pagination 
         pagination={pagination}
         onPageChange={handlePageChange}
-      />
+      /> */}
+
+
+      {showClock && <Clock />}
+      <button onClick={()=>setShowClock(false)}>Hide Clock</button>
     </div>
   );
 }
